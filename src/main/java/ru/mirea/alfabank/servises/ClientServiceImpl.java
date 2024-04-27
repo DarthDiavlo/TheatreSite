@@ -8,6 +8,7 @@ import ru.mirea.alfabank.Entities.ClientEntity;
 import ru.mirea.alfabank.modeldata.ClientModel;
 import ru.mirea.alfabank.modeldata.DAOAccount;
 import ru.mirea.alfabank.modeldata.DAOClient;
+import ru.mirea.alfabank.security.jwt.JWTServiceImpl;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -18,8 +19,10 @@ import java.util.List;
 public class ClientServiceImpl implements ClientService{
     private final DAOAccount daoAccount;
     private final DAOClient daoClient;
+    private final JWTServiceImpl jwtService;
     @Override
     public String registr(ClientModel clientModel) {
+        String jwt=jwtService.generateToken(clientModel);
         if(daoClient.findByEmail(clientModel.getEmail())==null){
             ClientEntity clientEntity = ClientEntity.builder()
                     .email(clientModel.getEmail())
@@ -35,8 +38,8 @@ public class ClientServiceImpl implements ClientService{
             clientEntity.setAccountEntities(accountEntityList);
             daoAccount.save(accountEntity);
             daoClient.save(clientEntity);
-            return "Клиент успешно зарегистрирован";
-        }else {return "Такой пользователь уже сущесвует";}
+            return "Клиент успешно зарегистрирован; "+jwt;
+        }else {return "Такой пользователь уже сущесвует; ";}
     }
     @Override
     public Boolean auth(ClientModel clientModel) {
