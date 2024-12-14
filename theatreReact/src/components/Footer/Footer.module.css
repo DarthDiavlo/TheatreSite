@@ -1,0 +1,34 @@
+.footer {
+  background-color: #333;
+  color: white;
+  padding: 20px;
+  text-align: center;
+}
+
+.footerContent {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.footer p {
+  margin: 0;
+  font-size: 14px;
+}
+
+.feedbackButton {
+  background-color: #00bcd4;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 14px;
+  transition: background-color 0.3s;
+}
+
+.feedbackButton:hover {
+  background-color: #0097a7;
+}

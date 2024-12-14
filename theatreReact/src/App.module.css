@@ -1,0 +1,10 @@
+.appContainer {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh; /* Устанавливаем минимальную высоту страницы */
+}
+
+.content {
+  flex: 1; /* Занимает всю доступную высоту между Header и Footer */
+  padding: 20px;
+}

@@ -1,0 +1,78 @@
+
+.not-found-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  background-color: #333333;
+  color: white;
+}
+
+.not-found {
+  text-align: center;
+}
+
+.not-found-title {
+  font-size: 10rem;
+  margin: 0;
+}
+
+.not-found-message {
+  font-size: 1.5rem;
+  margin: 1rem 0;
+}
+
+.not-found-animation {
+  position: relative;
+  width: 100px;
+  height: 100px;
+  margin: 0 auto;
+}
+
+.bubble {
+  position: absolute;
+  width: 20px;
+  height: 20px;
+  background-color: #61dafb;
+  border-radius: 50%;
+  animation: bubble 2s infinite;
+}
+
+.bubble1 {
+  top: 0;
+  left: 50%;
+  animation-delay: 0s;
+}
+
+.bubble2 {
+  top: 0;
+  left: 25%;
+  animation-delay: 0.5s;
+}
+
+.bubble3 {
+  top: 0;
+  left: 75%;
+  animation-delay: 1s;
+}
+
+.bubble4 {
+  top: 0;
+  left: 0;
+  animation-delay: 1.5s;
+}
+
+@keyframes bubble {
+  0% {
+    transform: translateY(0);
+    opacity: 1;
+  }
+  50% {
+    transform: translateY(-200px);
+    opacity: 0.5;
+  }
+  100% {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
